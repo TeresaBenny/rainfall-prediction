@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rainfall Prediction System</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Navbar -->
+        <div class="navbar">
+            <div class="logo">🌧️ Rain Predictor</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-overlay">
+                <!-- Text and Buttons Inside Overlay -->
+                <div class="hero-content">
+                    <h1>Accurate Prediction</h1>
+                    <p>Get the most reliable results with advanced models </p>
+                    <div class="hero-buttons">
+                        <a href="{{ url_for('home') }}" class="btn-primary">Start Prediction </a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature Section -->
+        <div id="features" class="features">
+            <h2>Key Features</h2>
+            <div class="feature-container">
+                <div class="feature-card">
+                    <h3>🌤️ Accurate Predictions</h3>
+                    <p>Our model ensures high precision using XGBoost.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 Real-time Insights</h3>
+                    <p>Provides up-to-date weather information.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚡ Fast Processing</h3>
+                    <p>Quick and reliable predictions with minimal latency.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div id="about" class="about">
+            <h2>About Our Model</h2>
+            <p>Our AI-powered rainfall prediction model uses XGBoost to analyze historical weather data and generate highly accurate predictions. It leverages key meteorological factors to identify patterns and predict rainfall outcomes.</p>
+            <p>The feautres used are MinTemp, MaxTemp, Rainfall, Evaporation, Sunshine, WindGustSpeed, Humidity9am, Humidity3pm,Pressure9am,Pressure3pm,Cloud9am, Cloud3pm</p>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <p>For inquiries or assistance, reach out to us at:</p>
+            <a href="mailto:techrain100@gmail.com" class="btn-contact">support@rainpredictor.com</a>
+            <p>NIVED KRISHNA A | TERESA BENNY | THWAYYIBA P.A | SAARANG SUNIL</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025 Rainfall Prediction System | Powered by AI </p>
+        </div>
+
+    </div> <!-- End of Main Container -->
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

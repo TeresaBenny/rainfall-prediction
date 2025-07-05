@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rainfall Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #e0f7fa, #ffffff); /* Blue to Red Background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Main Container */
+        .container {
+            width: 60%;
+            background: linear-gradient(to bottom right, #4caf50, #a2d5f2); /* Green to Light Blue */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #1c3d5a;
+        }
+
+        /* Form Styles - Grid Layout */
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 15px;
+            justify-content: center;
+        }
+
+        label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: left;
+            color: #333;
+        }
+
+        /* Smaller Input Fields */
+        input[type="text"] {
+            width: 90%; /* Reduced width */
+            padding: 6px 8px; /* Smaller padding */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* Reduced Button Width */
+        /* Predict Rain Button - Centered */
+        button {
+            grid-column: span 2; /* Span both columns */
+            width: 50%; /* Narrower button */
+            padding: 8px 12px; /* Compact padding */
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+            margin: 20px auto; /* Center button */
+            display: block; /* Ensure it stays centered */
+            text-align: center;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+
+        /* Go to Home Button */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 6px 12px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            form {
+                grid-template-columns: 1fr;
+            }
+
+            input[type="text"], button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <h1> Accurate Rainfall Prediction </h1>
+
+        <!-- Prediction Form -->
+        <form action="/predict" method="POST">
+            <!-- Row 1 -->
+            <div>
+                <label for="MinTemp">Min Temperature (C):</label>
+                <input type="text" name="MinTemp" required>
+            </div>
+
+            <div>
+                <label for="MaxTemp">Max Temperature (C):</label>
+                <input type="text" name="MaxTemp" required>
+            </div>
+
+            <!-- Row 2 -->
+            <div>
+                <label for="Rainfall">Rainfall (mm):</label>
+                <input type="text" name="Rainfall" required>
+            </div>
+
+            <div>
+                <label for="Evaporation">Evaporation (mm):</label>
+                <input type="text" name="Evaporation" required>
+            </div>
+
+            <!-- Row 3 -->
+            <div>
+                <label for="Sunshine">Sunshine (hours):</label>
+                <input type="text" name="Sunshine" required>
+            </div>
+
+            <div>
+                <label for="WindGustSpeed">Wind Gust Speed (km/h):</label>
+                <input type="text" name="WindGustSpeed" required>
+            </div>
+
+            <!-- Row 4 -->
+            <div>
+                <label for="Humidity9am">Humidity at 9 AM (%):</label>
+                <input type="text" name="Humidity9am" required>
+            </div>
+
+            <div>
+                <label for="Humidity3pm">Humidity at 3 PM (%):</label>
+                <input type="text" name="Humidity3pm" required>
+            </div>
+
+            <!-- Row 5 -->
+            <div>
+                <label for="Pressure9am">Pressure at 9 AM (hPa):</label>
+                <input type="text" name="Pressure9am" required>
+            </div>
+
+            <div>
+                <label for="Pressure3pm">Pressure at 3 PM (hPa):</label>
+                <input type="text" name="Pressure3pm" required>
+            </div>
+
+            <!-- Row 6 -->
+            <div>
+                <label for="Cloud9am">Cloud at 9 AM (0-8 oktas):</label>
+                <input type="text" name="Cloud9am" required>
+            </div>
+
+            <div>
+                <label for="Cloud3pm">Cloud at 3 PM (0-8 oktas):</label>
+                <input type="text" name="Cloud3pm" required>
+            </div>
+
+            <!-- Predict Button -->
+            <button type="submit">Predict Rain</button>
+        </form>
+
+        <!-- Home Button -->
+        <br>
+        <a href="/" class="btn"> Go to Home</a>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rain Prediction Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, #a3d5ff, #ffffff); /* Blue to White Gradient */
+            color: #333;
+        }
+
+        /* Main Container */
+        .container {
+            width: 75%;
+            margin: 50px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #1c3d5a;
+        }
+
+        /* Rain Image */
+        /* Rain Image */
+        .rain-img {
+            width: 60%;
+            height: auto;
+            max-height: 350px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+
+        /* Result Section */
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e0f7fa;
+            border-radius: 8px;
+            text-align: center;
+        }
+       
+        .result h2 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        .result p {
+            font-size: 24px;
+            color: #333;
+        }
+
+
+
+        /* Advisories Section */
+        .advisories {
+            margin-top: 30px;
+        }
+
+        .advisories h2 {
+            color: #1c3d5a;
+            margin-bottom: 15px;
+        }
+
+        .advisory-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .advisory-list li {
+            margin-bottom: 10px;
+            padding: 12px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin-top: 20px;
+            background-color: #1c3d5a;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Page Title -->
+        <h1>Rainfall Prediction Result </h1>
+
+        <!-- Rain Image -->
+        <!-- Rain Image -->
+        <div class="rain-img">
+            <img src="{{ url_for('static', filename='rain.png') }}" alt="Rain Image" class="rain-img" />
+        </div>
+
+
+        <!-- Prediction Result -->
+        <div class="result">
+            <h2>{{ prediction }}</h2>
+            <p>Tomorrow is a rainy day.</p>
+        </div>
+
+        <!-- Weather Advisories and Safety Measures -->
+        <div class="advisories">
+            <h2>⚡ Weather Advisories & Safety Measures</h2>
+            <ul class="advisory-list">
+                <li> **Carry an Umbrella:** Don't leave home without one!</li>
+                <li> **Wear Waterproof Clothing:** Use raincoats and waterproof boots to stay dry.</li>
+                <li> **Avoid Flooded Areas:** Be cautious in low-lying areas prone to flooding.</li>
+                <li> **Drive with Caution:** Roads may be slippery. Drive slowly and maintain a safe distance.</li>
+                <li> **Avoid Open Fields:** Stay indoors during thunderstorms to avoid lightning strikes.</li>
+            </ul>
+        </div>
+
+        <!-- Recommendations for Specific Users -->
+        <div class="advisories">
+            <h2>👥 Recommendations for Different Users</h2>
+            <ul class="advisory-list">
+                <li> **Office Workers:** Leave early to avoid traffic jams due to heavy rain.</li>
+                <li> **Students:** Wear a raincoat and protect books with plastic covers.</li>
+                <li>**Homeowners:** Check for leaks and secure loose outdoor items.</li>
+                <li> **Farmers:** Protect crops by ensuring proper drainage in the fields.</li>
+            </ul>
+        </div>
+
+        <!-- Button to Return to Home -->
+        <div style="text-align: center;">
+            <a href="/" class="btn"> Go Back to Home</a>
+        </div>
+    </div> <!-- End of Main Container -->
+
+</body>
+</html>
+

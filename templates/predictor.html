@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainfall Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        form { margin: 20px auto; width: 300px; }
+        input { display: block; width: 100%; margin: 10px 0; padding: 8px; }
+        button { padding: 10px; background: #28a745; color: white; border: none; cursor: pointer; }
+        button:hover { background: #218838; }
+        .result { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h2>Rainfall Prediction</h2>
+    <form action="/predict" method="post">
+        <input type="text" name="MinTemp " placeholder="MinTemp" required>
+        <input type="text" name="MaxTemp" placeholder="MaxTemp" required>
+        <input type="text" name="Rainfall" placeholder="Rainfall" required>
+        <input type="text" name="Evaporation" placeholder="Evaporation" required>
+        <input type="text" name="Sunshine" placeholder="Sunshine" required>
+        <input type="text" name="WindGustSpeed" placeholder="Wind Gust Speed" required>
+        <input type="text" name="Humidity9am" placeholder="Humidity 9AM" required>
+        <input type="text" name="Humidity3pm" placeholder="Humidity 3PM" required>
+        <input type="text" name="Pressure9am" placeholder="Pressure 9AM" required>
+        <input type="text" name="Pressure3pm" placeholder="Pressure 3PM" required>
+        <input type="text" name="Cloud9am" placeholder="Cloud 9AM" required>
+        <input type="text" name="Cloud3pm" placeholder="Cloud 3PM" required>
+        <button type="submit">Predict</button>
+    </form>
+    
+    {% if prediction_text %}
+        <p class="result">{{ prediction_text }}</p>
+    {% endif %}
+</body>
+</html>
